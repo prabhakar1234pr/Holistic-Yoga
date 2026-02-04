@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# remotion (do not commit rendered caches/binaries)
+/remotion/node_modules/
+/remotion/.remotion/
+
 # production
 /build
 
