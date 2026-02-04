@@ -38,18 +38,18 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-gradient-to-b from-emerald-50 to-white">
+    <section id="testimonials" className="py-14 sm:py-16 md:py-28 bg-gradient-to-b from-emerald-50 to-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
             Hear From Our Global Community
           </h2>
           <div className="flex justify-center">
-            <p className="text-xl text-gray-600 max-w-xl mx-auto text-center">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto text-center">
               Our clients from around the world share their transformative experiences with Holistic Yoga.
             </p>
           </div>
-          <Badge className="inline-flex items-center gap-3 px-8 py-3 bg-emerald-100 text-emerald-700 rounded-full text-lg h-auto">
+          <Badge className="inline-flex items-center gap-3 px-5 py-2 sm:px-8 sm:py-3 bg-emerald-100 text-emerald-700 rounded-full text-base sm:text-lg h-auto">
             <span className="text-2xl font-bold">98%</span>
             <span className="font-semibold">Client Satisfaction Rate</span>
           </Badge>
@@ -59,7 +59,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="w-full rounded-3xl p-10 shadow-md hover:shadow-xl transition-all duration-300 h-auto md:h-[398px]"
+              className="w-full rounded-3xl p-7 sm:p-8 md:p-10 shadow-md hover:shadow-xl transition-all duration-300 h-auto md:h-[398px]"
             >
               <CardHeader className="px-0">
                 <div className="flex gap-1 mb-6">

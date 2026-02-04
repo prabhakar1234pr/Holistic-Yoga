@@ -14,10 +14,10 @@ export default function CorporateWellness() {
     <section id="corporate-wellness" className="py-12 md:py-16 bg-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 md:space-y-10">
         <div className="text-center space-y-4 md:space-y-6">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
             Corporate Wellness Sessions
           </h2>
-          <p className="text-xl text-gray-600 max-w-5xl mx-auto text-center">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-5xl mx-auto text-center">
             I have conducted yoga sessions (including chair yoga) in IT Companies like Oracle, TechMahindra
             etc Govt based organisations like LIC, Mazagaon Dock
           </p>

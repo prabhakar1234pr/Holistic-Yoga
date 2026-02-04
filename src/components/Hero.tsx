@@ -18,17 +18,17 @@ export default function Hero() {
         <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center flex flex-col items-center justify-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-32 text-center flex flex-col items-center justify-center">
         <div
           className={`${mounted ? "animate-fade-in-up" : "opacity-0"} space-y-6 md:space-y-8`}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-tight">
             <span className="font-serif">Holistic Yoga</span>
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-gray-700 font-light">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 font-light">
             Your Online Yoga Sanctuary
           </p>
-          <p className="text-lg md:text-xl text-gray-600 max-w-7xl mx-auto leading-relaxed text-center">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto leading-relaxed text-center">
             Connect with an International Certified Yoga Instructor through personalized online sessions, anytime, anywhere.
             <br />
             Boost your well-being from the comfort of your home or travels.

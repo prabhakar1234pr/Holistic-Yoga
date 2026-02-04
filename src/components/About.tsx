@@ -13,16 +13,16 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-gradient-to-b from-white to-emerald-50">
+    <section id="about" className="py-14 sm:py-16 md:py-28 bg-gradient-to-b from-white to-emerald-50">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto text-center space-y-10 md:space-y-12">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center">
             About Me: Certified International Yoga Trainer
           </h2>
 
-          <Card className="rounded-3xl border border-emerald-100 bg-gradient-to-br from-white via-emerald-50 to-white p-14 md:p-20 shadow-2xl">
+          <Card className="rounded-3xl border border-emerald-100 bg-gradient-to-br from-white via-emerald-50 to-white p-8 sm:p-10 md:p-20 shadow-2xl">
             <CardHeader className="justify-items-center text-center">
-              <div className="mx-auto mb-10 size-40 md:size-48 overflow-hidden rounded-full bg-white shadow-lg ring-1 ring-emerald-100">
+              <div className="mx-auto mb-8 sm:mb-10 size-36 sm:size-40 md:size-48 overflow-hidden rounded-full bg-white shadow-lg ring-1 ring-emerald-100">
                 <Image
                   src="/Teja.jpeg"
                   alt="Yoga trainer portrait"
@@ -31,7 +31,7 @@ export default function About() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <CardDescription className="text-xl text-gray-800 leading-relaxed text-center">
+              <CardDescription className="text-lg sm:text-xl text-gray-800 leading-relaxed text-center">
                 Hello! I transitioned from Software Engineering to become an International Yoga Trainer, 
                 driven by a deep passion to <strong className="text-emerald-600">bring health, harmony, and empowerment</strong> through 
                 yoga to people's lives, wherever you are in the world.
@@ -55,7 +55,7 @@ export default function About() {
                       <Badge
                         key={index}
                         variant="secondary"
-                        className="text-lg px-4 py-2 bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+                        className="text-base sm:text-lg px-4 py-2 bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
                       >
                         ✓ {cert}
                       </Badge>

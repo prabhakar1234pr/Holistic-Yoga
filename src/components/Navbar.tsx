@@ -24,16 +24,16 @@ export default function Navbar() {
       }`}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 w-full">
+        <div className="flex items-center justify-between h-16 sm:h-20 w-full">
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-serif font-bold text-gray-900">
+            <a href="#" className="text-xl sm:text-2xl font-serif font-bold text-gray-900">
               Holistic Yoga
             </a>
           </div>
           <div>
             <Button
               asChild
-              className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-none"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-none px-3 sm:px-4"
             >
               <a
                 href="https://wa.me/7718820274"
@@ -41,7 +41,8 @@ export default function Navbar() {
                 rel="noopener noreferrer"
               >
                 <Phone className="mr-2 w-4 h-4" />
-                Contact via WhatsApp
+                <span className="hidden sm:inline">Contact via WhatsApp</span>
+                <span className="sm:hidden">WhatsApp</span>
               </a>
             </Button>
           </div>

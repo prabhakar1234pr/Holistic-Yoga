@@ -29,19 +29,19 @@ export default function HowItWorks() {
     <section className="pt-8 md:pt-10 pb-8 md:pb-10 bg-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
             Your Path to Inner Peace: How It Works
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-center">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto text-center">
             Flexible packages are available, with sessions starting from affordable prices.
           </p>
         </div>
 
-        <div className="grid w-full md:grid-cols-3 gap-16 relative">
+        <div className="grid w-full md:grid-cols-3 gap-10 sm:gap-12 md:gap-16 relative">
           {steps.map((step, index) => (
             <Card key={index} className="relative w-full text-center border-0 shadow-none">
               <CardHeader>
-                <div className="relative inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-emerald-500 to-purple-600 rounded-full text-white text-5xl font-bold mb-8 shadow-lg transform hover:scale-110 transition-transform duration-300">
+                <div className="relative inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-gradient-to-br from-emerald-500 to-purple-600 rounded-full text-white text-4xl sm:text-5xl font-bold mb-6 sm:mb-8 shadow-lg transform hover:scale-110 transition-transform duration-300">
                   <span className="absolute">{step.icon}</span>
                 </div>
                 <CardTitle className="text-2xl font-serif font-bold text-gray-900 mb-6">
