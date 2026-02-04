@@ -34,6 +34,27 @@ export default function Home() {
             center.
           </p>
         </div>
+
+        <section
+          aria-label="About me"
+          className="w-full rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-black"
+        >
+          <div className="flex flex-col items-center gap-5 text-center">
+            <div className="size-32 overflow-hidden rounded-full bg-zinc-100 shadow-md ring-1 ring-zinc-200 dark:bg-white/10 dark:ring-white/10">
+              <Image
+                src="/Teja.jpeg"
+                alt="About me"
+                width={256}
+                height={256}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
+              About me
+            </div>
+          </div>
+        </section>
+
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
             className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
