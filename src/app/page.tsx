@@ -22,7 +22,7 @@ export default function Home() {
     name: "Tejasree",
     url: siteUrl,
     description:
-      "International Certified Yoga Trainer offering personalized online yoga sessions for all levels.",
+      "International certified yoga trainer offering personalized online yoga sessions (1:1 and small groups).",
     sameAs: ["https://instagram.com/holisticyoga.with.tejasree"],
   };
 

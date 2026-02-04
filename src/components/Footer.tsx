@@ -6,7 +6,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-serif font-bold mb-6">Holistic Yoga</h3>
             <p className="text-gray-400 leading-relaxed text-base sm:text-lg">
-              Your Online Yoga Sanctuary. Bringing holistic wellness to you at the comfort of your home!
+              Online yoga, wherever you are.
             </p>
           </div>
 

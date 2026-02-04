@@ -5,22 +5,22 @@ export default function Benefits() {
     {
       icon: "⏰",
       title: "Flexibility",
-      description: "Schedule sessions that fit your global timezone and personal availability, making yoga accessible whenever you need it.",
+      description: "Times that fit your timezone and routine.",
     },
     {
       icon: "🌍",
       title: "Accessibility",
-      description: "Practice from any location in the world, eliminating travel time and geographical barriers to your wellness journey.",
+      description: "Practice anywhere—no commute, no barriers.",
     },
     {
       icon: "🏠",
       title: "Comfort",
-      description: "Learn and practice in the privacy and comfort of your own space, fostering a relaxed and focused environment.",
+      description: "Your space, your pace, your focus.",
     },
     {
       icon: "💰",
       title: "Cost-Effective",
-      description: "Enjoy significant savings with no studio fees, travel costs, or hidden expenses, making yoga more affordable.",
+      description: "No studio fees or travel costs.",
     },
   ];
 
@@ -29,11 +29,11 @@ export default function Benefits() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
-            The Benefits of Online Yoga
+            Why Online Yoga Works
           </h2>
           <div className="flex justify-center">
             <p className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto text-center">
-              Experience the convenience and flexibility of practicing yoga from anywhere in the world
+              Real guidance. More flexibility.
             </p>
           </div>
         </div>

@@ -5,19 +5,19 @@ export default function Offerings() {
   const offerings = [
     {
       title: "Private 1:1 Sessions",
-      description: "Customized Hatha and Krishnamacharya flows for individual progress. Perfect for personalized attention and tailored practice.",
+      description: "Hatha + Krishnamacharya, personalized to your goals and progress.",
       icon: "✨",
       color: "from-emerald-500 to-teal-600",
     },
     {
       title: "Group Classes",
-      description: "Weekly schedules for deeply relaxing Restorative Yoga. Connect with a community while finding your inner peace.",
+      description: "Restorative flows to reset and recharge—practice with a supportive community.",
       icon: "🌙",
       color: "from-purple-500 to-indigo-600",
     },
     {
       title: "Prenatal & Postnatal",
-      description: "Customized Yoga sessions during Pregnancy for a healthier delivery and better recovery after the postpartum via Postnatal sessions.",
+      description: "Gentle, safe sessions for pregnancy and postnatal recovery.",
       icon: "🤱",
       color: "from-pink-500 to-rose-600",
     },
@@ -28,13 +28,13 @@ export default function Offerings() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
-            Our Diverse Yoga Offerings
+            Choose Your Session
           </h2>
           <div className="flex justify-center">
             <p className="text-lg sm:text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed text-center">
-              Explore our comprehensive range of online yoga classes designed to fit your unique needs and schedule.
+              Private 1:1, group classes, and prenatal/postnatal support.
               <br className="hidden md:block" />
-              All sessions are conveniently accessible via Zoom, Google Meet, or your preferred online platform.
+              Join on Zoom, Google Meet, or your preferred platform.
             </p>
           </div>
         </div>

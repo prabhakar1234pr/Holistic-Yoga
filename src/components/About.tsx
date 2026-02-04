@@ -15,7 +15,7 @@ export default function About() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto text-center space-y-10 md:space-y-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center">
-            About Me: Certified International Yoga Trainer
+            Meet Tejasree
           </h2>
 
           <Card className="rounded-3xl border border-emerald-100 bg-gradient-to-br from-white via-emerald-50 to-white p-8 sm:p-10 md:p-20 shadow-2xl">
@@ -30,15 +30,14 @@ export default function About() {
                 />
               </div>
               <CardDescription className="text-lg sm:text-xl text-gray-800 leading-relaxed text-center">
-                Hello! I transitioned from Software Engineering to become an International Yoga Trainer, 
-                driven by a deep passion to <strong className="text-emerald-600">bring health, harmony, and empowerment</strong> through 
-                yoga to people’s lives, wherever you are in the world.
+                Former software engineer, now an international yoga trainer.
+                <br className="hidden sm:block" />
+                I help you build <strong className="text-emerald-600">strength, calm, and balance</strong>—wherever you are.
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center space-y-10 md:space-y-12">
               <CardDescription className="text-lg text-gray-700 leading-relaxed text-center">
-                My mission is to empower individuals to achieve physical, mental, and emotional balance 
-                through personalized online practice.
+                Personalized online practice for your body, mind, and breath.
               </CardDescription>
 
               <Card className="rounded-2xl border border-emerald-100 bg-white/70 shadow-sm">
@@ -63,9 +62,7 @@ export default function About() {
               </Card>
 
               <CardDescription className="text-lg text-gray-700 leading-relaxed text-center">
-                I specialize in creating accessible and engaging sessions tailored to all levels, especially 
-                for beginners. My goal is to guide you on a journey to inner peace and well-being, fostering 
-                a supportive and enriching online sanctuary for your practice.
+                Accessible sessions for every level—especially beginners. Clear guidance, steady progress, and a calm space to return to.
               </CardDescription>
             </CardContent>
           </Card>

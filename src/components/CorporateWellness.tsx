@@ -13,14 +13,12 @@ export default function CorporateWellness() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 md:space-y-10">
         <div className="text-center space-y-4 md:space-y-6">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
-            Corporate Wellness Sessions
+            Corporate Wellness
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-5xl mx-auto text-center">
-            I’ve conducted corporate yoga sessions (including chair yoga) for IT companies such as Oracle and Tech Mahindra,
-            as well as government organizations like LIC and Mazagaon Dock.
-          </p>
-          <p className="text-lg text-gray-600 max-w-5xl mx-auto text-center">
-            These sessions are offered as part of corporate wellness programs and for special occasions such as International Yoga Day.
+            Chair yoga and mat sessions for teams—delivered for Oracle, Tech Mahindra, LIC, and Mazagaon Dock.
+            <br className="hidden sm:block" />
+            Ideal for wellness programs and International Yoga Day.
           </p>
         </div>
 

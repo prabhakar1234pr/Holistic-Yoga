@@ -68,11 +68,11 @@ export default function Testimonials() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
-            Hear From Our Global Community
+            Loved Around the World
           </h2>
           <div className="flex justify-center">
             <p className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto text-center">
-              Our clients from around the world share their transformative experiences with Holistic Yoga.
+              Real stories from students across the globe.
             </p>
           </div>
           <Badge className="inline-flex items-center gap-3 px-5 py-2 sm:px-8 sm:py-3 bg-emerald-100 text-emerald-700 rounded-full text-base sm:text-lg h-auto">
@@ -81,19 +81,37 @@ export default function Testimonials() {
           </Badge>
         </div>
 
-        <div className="mx-auto w-full max-w-xl">
-          <div className="relative h-[340px] sm:h-[360px] md:h-[380px] overflow-hidden">
-            {/* Side peeks (no content) */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-[112%] rotate-[-6deg]">
-                <div className="h-[320px] w-[92vw] max-w-[520px] sm:h-[340px] md:h-[360px]">
-                  <Card className="h-full w-full rounded-3xl bg-white/80 shadow-md" />
-                </div>
+        <div className="mx-auto w-full max-w-4xl">
+          <div
+            className="relative h-[340px] sm:h-[360px] md:h-[380px] overflow-hidden"
+            style={{ perspective: "1200px" }}
+          >
+            {/* Side peeks (previous / next) */}
+            <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+              <div className="absolute left-1/2 top-[46%] -translate-y-1/2 -translate-x-[112%] rotate-[-10deg] scale-[0.9] origin-bottom-right transform-gpu">
+                <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[84vw] max-w-[520px] rounded-3xl bg-white/80 shadow-md border border-emerald-100/60">
+                  <CardContent className="flex flex-col h-full p-7 sm:p-8 md:p-10 opacity-70">
+                    <CardDescription className="text-gray-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
+                      <q>{prev.quote}</q>
+                    </CardDescription>
+                    <p className="mt-auto pt-6 text-xs sm:text-sm font-semibold text-emerald-600">
+                      — {prev.author}
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[12%] rotate-[6deg]">
-                <div className="h-[320px] w-[92vw] max-w-[520px] sm:h-[340px] md:h-[360px]">
-                  <Card className="h-full w-full rounded-3xl bg-white/80 shadow-md" />
-                </div>
+
+              <div className="absolute left-1/2 top-[46%] -translate-y-1/2 translate-x-[12%] rotate-[10deg] scale-[0.9] origin-bottom-left transform-gpu">
+                <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[84vw] max-w-[520px] rounded-3xl bg-white/80 shadow-md border border-emerald-100/60">
+                  <CardContent className="flex flex-col h-full p-7 sm:p-8 md:p-10 opacity-70">
+                    <CardDescription className="text-gray-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
+                      <q>{next.quote}</q>
+                    </CardDescription>
+                    <p className="mt-auto pt-6 text-xs sm:text-sm font-semibold text-emerald-600">
+                      — {next.author}
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
@@ -102,7 +120,7 @@ export default function Testimonials() {
               type="button"
               variant="outline"
               size="icon"
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/85 backdrop-blur-sm"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 rounded-full bg-white/85 backdrop-blur-sm"
               onClick={() => go(-1)}
               aria-label={`Previous testimonial: ${prev.author}`}
             >
@@ -112,7 +130,7 @@ export default function Testimonials() {
               type="button"
               variant="outline"
               size="icon"
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/85 backdrop-blur-sm"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 rounded-full bg-white/85 backdrop-blur-sm"
               onClick={() => go(1)}
               aria-label={`Next testimonial: ${next.author}`}
             >
@@ -123,7 +141,7 @@ export default function Testimonials() {
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={index}
-                className="absolute inset-0"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
                 drag={reduceMotion ? false : "x"}
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.18}
@@ -144,7 +162,7 @@ export default function Testimonials() {
                 transition={{ type: "spring", stiffness: 260, damping: 26 }}
                 style={{ touchAction: "pan-y" }}
               >
-                <Card className="h-full w-full rounded-3xl p-7 sm:p-8 md:p-10 shadow-xl bg-white">
+                <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[92vw] max-w-[520px] rounded-3xl p-7 sm:p-8 md:p-10 shadow-xl bg-white">
                   <CardHeader className="px-0">
                     <span className="sr-only">{current.rating} out of 5 stars</span>
                     <div className="flex gap-1 mb-6" aria-hidden="true">

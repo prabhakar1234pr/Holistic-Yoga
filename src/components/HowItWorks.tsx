@@ -8,20 +8,17 @@ export default function HowItWorks() {
     {
       number: "1",
       title: "Explore",
-      description: "Browse our diverse class types and flexible schedules to find the perfect session that aligns with your goals.",
-      icon: "🔍",
+      description: "Pick 1:1, group, or prenatal/postnatal—share your goal.",
     },
     {
       number: "2",
       title: "Connect",
-      description: "Reach out to us via WhatsApp for instant booking assistance or to get answers to any questions you may have.",
-      icon: "💬",
+      description: "Message on WhatsApp to choose a time and plan.",
     },
     {
       number: "3",
       title: "Flow",
-      description: "Join your personalized online yoga session from anywhere in the world and embark on your journey to well-being.",
-      icon: "🧘",
+      description: "Join online and feel the difference—one session at a time.",
     },
   ];
 
@@ -30,13 +27,13 @@ export default function HowItWorks() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
-            Your Path to Inner Peace: How It Works
+            Start in 3 Simple Steps
           </h2>
           <div className="flex justify-center">
             <LottieAccent className="h-10 w-10" label="Calm breathing accent" />
           </div>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto text-center">
-            Flexible packages are available, with sessions starting from affordable prices.
+            Message on WhatsApp to book in minutes.
           </p>
         </div>
 
@@ -44,8 +41,10 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <Card key={index} className="relative w-full text-center border-0 shadow-none">
               <CardHeader>
-                <div className="relative inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-gradient-to-br from-emerald-500 to-purple-600 rounded-full text-white text-4xl sm:text-5xl font-bold mb-6 sm:mb-8 shadow-lg transform hover:scale-110 transition-transform duration-300">
-                  <span className="absolute">{step.icon}</span>
+                <div className="mx-auto mb-6 sm:mb-8 inline-flex items-center justify-center size-16 sm:size-20 md:size-24 rounded-full bg-white ring-2 ring-emerald-200 shadow-sm">
+                  <span className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-emerald-700">
+                    {step.number}
+                  </span>
                 </div>
                 <CardTitle className="text-2xl font-serif font-bold text-gray-900 mb-6">
                   {step.title}
@@ -72,7 +71,7 @@ export default function HowItWorks() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Your Journey Now
+                Book on WhatsApp
               </a>
             </Button>
           </MotionWrap>

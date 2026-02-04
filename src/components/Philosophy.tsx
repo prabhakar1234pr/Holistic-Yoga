@@ -5,17 +5,17 @@ export default function Philosophy() {
     {
       icon: "🧘",
       title: "Tailored for You",
-      description: "Customized sessions from beginner level to support you finding greater calm, strength and clarity.",
+      description: "Sessions built around your body, goals, and level—from beginner to advanced.",
     },
     {
       icon: "🌿",
       title: "Holistic Approach",
-      description: "Emphasizing mind-body connection for complete well-being and inner harmony.",
+      description: "Breath, movement, and mindfulness—for whole-body well-being.",
     },
     {
       icon: "💚",
       title: "Compassionate Guidance",
-      description: "Certified instructors with a mission to empower and transform individuals with practical tools and insights that you can carry off the mat and into your daily life.",
+      description: "Clear cues, kind support, and tools you can use off the mat.",
     },
   ];
 
@@ -24,11 +24,11 @@ export default function Philosophy() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-emerald-950">
-            Embrace Your Journey
+            Your Practice, Your Pace
             <span className="block text-emerald-700 mt-2">Our Philosophy</span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl md:max-w-7xl mx-auto leading-relaxed text-center">
-            At Holistic Yoga, we believe in tailoring yoga for all levels and goals, focusing on a holistic mind-body connection. Our small class sizes ensure personalized attention, guided by certified instructors.
+            Yoga for every body—grounded in breath, alignment, and mindful movement. Get personal guidance in a calm, online space.
           </p>
         </div>
 

@@ -1,5 +1,4 @@
 import LottieAccent from "@/components/LottieAccent";
-import ThreeAccent from "@/components/ThreeAccent";
 
 export default function Hero() {
   return (
@@ -17,7 +16,7 @@ export default function Hero() {
             <span className="font-serif">Holistic Yoga</span>
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 font-light">
-            Your Online Yoga Sanctuary
+            Online yoga, tailored to you
           </p>
           {process.env.NEXT_PUBLIC_SHOW_HERO_VIDEO === "1" ? (
             <video
@@ -35,16 +34,11 @@ export default function Hero() {
             <LottieAccent className="h-12 w-12" label="Breathing accent" />
           </div>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto leading-relaxed text-center">
-            Connect with an International Certified Yoga Instructor through personalized online sessions, anytime, anywhere.
-            <br />
-            Boost your well-being from the comfort of your home or travels.
+            1:1 and small-group sessions with an international certified instructor.
+            <br className="hidden sm:block" />
+            Practice anywhere. Feel stronger, calmer, and more aligned.
           </p>
         </div>
-      </div>
-
-      {/* Small 3D accent (lazy + mobile-safe) */}
-      <div className="absolute right-6 top-24 sm:right-10 sm:top-28 z-0 pointer-events-none">
-        <ThreeAccent className="h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 opacity-85" />
       </div>
 
       {/* Scroll indicator */}
