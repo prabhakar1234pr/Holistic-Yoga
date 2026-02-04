@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,22 +27,6 @@ export default function Navbar() {
             <a href="#" className="text-xl sm:text-2xl font-serif font-bold text-gray-900">
               Holistic Yoga
             </a>
-          </div>
-          <div>
-            <Button
-              asChild
-              className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-none px-3 sm:px-4"
-            >
-              <a
-                href="https://wa.me/7718820274"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Phone className="mr-2 w-4 h-4" />
-                <span className="hidden sm:inline">Contact via WhatsApp</span>
-                <span className="sm:hidden">WhatsApp</span>
-              </a>
-            </Button>
           </div>
         </div>
       </div>

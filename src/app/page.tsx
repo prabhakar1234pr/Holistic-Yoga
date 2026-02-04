@@ -8,6 +8,7 @@ import CorporateWellness from "@/components/CorporateWellness";
 import HowItWorks from "@/components/HowItWorks";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import ContactWidget from "@/components/ContactWidget";
 
 export default function Home() {
   const siteUrl =
@@ -32,6 +33,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
+      <ContactWidget />
       <Hero />
       <Philosophy />
       <Offerings />

@@ -1,0 +1,16 @@
+{
+  "name": "holistic-yoga-remotion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "render:hero": "remotion render src/index.ts HeroBreathingDot ../public/videos/hero-breathe.mp4 --codec=h264 --overwrite",
+    "render:hero:webm": "remotion render src/index.ts HeroBreathingDot ../public/videos/hero-breathe.webm --codec=vp8 --overwrite"
+  },
+  "dependencies": {
+    "remotion": "^4"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.417"
+  }
+}

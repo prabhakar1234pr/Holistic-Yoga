@@ -1,39 +1,67 @@
+ "use client";
+
+import * as React from "react";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "After a few weeks of consistent practice, I felt noticeably less stressed and more balanced. Truly life-changing!",
+    author: "Client from Karnataka, India",
+    rating: 5,
+  },
+  {
+    quote:
+      "As a complete beginner, I found the instruction incredibly supportive and encouraging. It helped me feel calmer, stronger, and more confident in my body.",
+    author: "Client from Karnataka, India",
+    rating: 5,
+  },
+  {
+    quote:
+      "Since joining the classes, I’ve noticed meaningful improvements in my overall well-being and energy, and I’ve also lost a few kilos.",
+    author: "Client from Andhra Pradesh, India",
+    rating: 5,
+  },
+  {
+    quote:
+      "I felt so relaxed during yoga sessions. It brings immense energy and happiness. Benefited with not only a flexible body, but a happier mind too.",
+    author: "Client from Texas, North America",
+    rating: 5,
+  },
+  {
+    quote:
+      "Thank you for being such an inspirational teacher. I have really enjoyed yoga with you and felt the much needed positive shift in my life.",
+    author: "Client from Arizona, North America",
+    rating: 5,
+  },
+  {
+    quote:
+      "Yoga helped me in relieving my pains and improved my emotional well being. Health improved a lot",
+    author: "Client from AP, India",
+    rating: 5,
+  },
+] as const;
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      quote: "After a few weeks of consistent practice, I felt noticeably less stressed and more balanced. Truly life-changing!",
-      author: "Client from Karnataka, India",
-      rating: 5,
-    },
-    {
-      quote: "As a complete beginner, I found the instruction incredibly supportive and encouraging. It helped me feel calmer, stronger, and more confident in my body.",
-      author: "Client from Karnataka, India",
-      rating: 5,
-    },
-    {
-      quote: "Since joining the classes, I’ve noticed meaningful improvements in my overall well-being and energy, and I’ve also lost a few kilos.",
-      author: "Client from Andhra Pradesh, India",
-      rating: 5,
-    },
-    {
-      quote: "I felt so relaxed during yoga sessions. It brings immense energy and happiness. Benefited with not only a flexible body, but a happier mind too.",
-      author: "Client from Texas, North America",
-      rating: 5,
-    },
-    {
-      quote: "Thank you for being such an inspirational teacher. I have really enjoyed yoga with you and felt the much needed positive shift in my life.",
-      author: "Client from Arizona, North America",
-      rating: 5,
-    },
-    {
-      quote: "Yoga helped me in relieving my pains and improved my emotional well being. Health improved a lot",
-      author: "Client from AP, India",
-      rating: 5,
-    },
-  ];
+  const reduceMotion = useReducedMotion();
+  const [index, setIndex] = React.useState(0);
+  const [direction, setDirection] = React.useState<-1 | 1>(1);
+
+  const len = TESTIMONIALS.length;
+  const current = TESTIMONIALS[index]!;
+  const prev = TESTIMONIALS[(index - 1 + len) % len]!;
+  const next = TESTIMONIALS[(index + 1) % len]!;
+
+  const swipeThreshold = 110;
+
+  const go = (dir: -1 | 1) => {
+    setDirection(dir);
+    setIndex((i) => (i + dir + len) % len);
+  };
 
   return (
     <section id="testimonials" className="py-14 sm:py-16 md:py-28 bg-gradient-to-b from-emerald-50 to-white">
@@ -53,32 +81,92 @@ export default function Testimonials() {
           </Badge>
         </div>
 
-        <div className="grid w-full md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="w-full rounded-3xl p-7 sm:p-8 md:p-10 shadow-md hover:shadow-xl transition-all duration-300 h-auto md:h-[398px]"
-            >
-              <CardHeader className="px-0">
-                <span className="sr-only">{testimonial.rating} out of 5 stars</span>
-                <div className="flex gap-1 mb-6" aria-hidden="true">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">
-                      ⭐
-                    </span>
-                  ))}
+        <div className="mx-auto w-full max-w-xl">
+          <div className="relative h-[340px] sm:h-[360px] md:h-[380px] overflow-hidden">
+            {/* Side peeks (no content) */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-[112%] rotate-[-6deg]">
+                <div className="h-[320px] w-[92vw] max-w-[520px] sm:h-[340px] md:h-[360px]">
+                  <Card className="h-full w-full rounded-3xl bg-white/80 shadow-md" />
                 </div>
-              </CardHeader>
-              <CardContent className="px-0 flex flex-col h-full">
-                <CardDescription className="text-gray-700 leading-relaxed italic text-lg text-clamp-6">
-                  <q>{testimonial.quote}</q>
-                </CardDescription>
-                <p className="mt-auto pt-6 text-sm font-semibold text-emerald-600">
-                  — {testimonial.author}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+              <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[12%] rotate-[6deg]">
+                <div className="h-[320px] w-[92vw] max-w-[520px] sm:h-[340px] md:h-[360px]">
+                  <Card className="h-full w-full rounded-3xl bg-white/80 shadow-md" />
+                </div>
+              </div>
+            </div>
+
+            {/* Left/Right buttons */}
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/85 backdrop-blur-sm"
+              onClick={() => go(-1)}
+              aria-label={`Previous testimonial: ${prev.author}`}
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/85 backdrop-blur-sm"
+              onClick={() => go(1)}
+              aria-label={`Next testimonial: ${next.author}`}
+            >
+              <ChevronRight className="h-5 w-5" />
+            </Button>
+
+            {/* Top swipeable card. */}
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.div
+                key={index}
+                className="absolute inset-0"
+                drag={reduceMotion ? false : "x"}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.18}
+                onDragEnd={(_, info) => {
+                  if (reduceMotion) return;
+                  if (info.offset.x > swipeThreshold) go(-1);
+                  else if (info.offset.x < -swipeThreshold) go(1);
+                }}
+                custom={direction}
+                initial={{ opacity: 0, scale: 0.98, x: direction * 18 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{
+                  opacity: 0,
+                  x: direction * -420,
+                  rotate: direction * -10,
+                  transition: { duration: 0.2 },
+                }}
+                transition={{ type: "spring", stiffness: 260, damping: 26 }}
+                style={{ touchAction: "pan-y" }}
+              >
+                <Card className="h-full w-full rounded-3xl p-7 sm:p-8 md:p-10 shadow-xl bg-white">
+                  <CardHeader className="px-0">
+                    <span className="sr-only">{current.rating} out of 5 stars</span>
+                    <div className="flex gap-1 mb-6" aria-hidden="true">
+                    {[...Array(current.rating)].map((_, i) => (
+                        <span key={i} className="text-yellow-400 text-xl">
+                          ⭐
+                        </span>
+                      ))}
+                    </div>
+                  </CardHeader>
+                  <CardContent className="px-0 flex flex-col h-full">
+                    <CardDescription className="text-gray-700 leading-relaxed italic text-lg">
+                      <q>{current.quote}</q>
+                    </CardDescription>
+                    <p className="mt-auto pt-6 text-sm font-semibold text-emerald-600">
+                      — {current.author}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

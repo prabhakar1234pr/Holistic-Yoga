@@ -1,3 +1,6 @@
+import LottieAccent from "@/components/LottieAccent";
+import ThreeAccent from "@/components/ThreeAccent";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-emerald-50 via-white to-purple-50 overflow-hidden">
@@ -16,12 +19,32 @@ export default function Hero() {
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 font-light">
             Your Online Yoga Sanctuary
           </p>
+          {process.env.NEXT_PUBLIC_SHOW_HERO_VIDEO === "1" ? (
+            <video
+              className="mx-auto w-full max-w-xs rounded-2xl ring-1 ring-emerald-100 shadow-sm"
+              src="/videos/hero-breathe.mp4"
+              muted
+              playsInline
+              autoPlay
+              loop
+              preload="metadata"
+            />
+          ) : null}
+          <div className="flex justify-center">
+            {/* Lazy-loaded Lottie accent (client-only) */}
+            <LottieAccent className="h-12 w-12" label="Breathing accent" />
+          </div>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto leading-relaxed text-center">
             Connect with an International Certified Yoga Instructor through personalized online sessions, anytime, anywhere.
             <br />
             Boost your well-being from the comfort of your home or travels.
           </p>
         </div>
+      </div>
+
+      {/* Small 3D accent (lazy + mobile-safe) */}
+      <div className="absolute right-6 top-24 sm:right-10 sm:top-28 z-0 pointer-events-none">
+        <ThreeAccent className="h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 opacity-85" />
       </div>
 
       {/* Scroll indicator */}

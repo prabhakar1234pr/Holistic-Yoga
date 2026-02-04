@@ -20,6 +20,49 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Remotion (asset generation)
+
+This repo includes a separate Remotion project for generating short video assets (used as *exported files*, not runtime effects).
+
+- **Location**: `remotion/`
+- **Install**:
+
+```bash
+cd remotion
+npm install
+```
+
+- **Preview**:
+
+```bash
+npm run dev
+```
+
+- **Render hero video into the Next.js `public/` folder**:
+
+```bash
+cd remotion
+npm run render:hero
+```
+
+This renders to `public/videos/hero-breathe.mp4`.
+
+To show it on the homepage, run Next.js with:
+
+```bash
+NEXT_PUBLIC_SHOW_HERO_VIDEO=1 npm run dev
+```
+
+## Verification checklist
+
+- **Code quality**:
+  - `npm run lint`
+  - `npm run build`
+- **Manual mobile QA** (Chrome devtools device mode + a real phone if possible):
+  - Scroll feels smooth (no jank during navbar changes)
+  - Reduced-motion enabled: no distracting motion, 3D disabled, Lottie falls back
+  - CTA buttons feel responsive to taps
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

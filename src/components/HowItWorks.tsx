@@ -1,5 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { MotionWrap } from "@/components/Motion";
+import LottieAccent from "@/components/LottieAccent";
 
 export default function HowItWorks() {
   const steps = [
@@ -30,6 +32,9 @@ export default function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
             Your Path to Inner Peace: How It Works
           </h2>
+          <div className="flex justify-center">
+            <LottieAccent className="h-10 w-10" label="Calm breathing accent" />
+          </div>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto text-center">
             Flexible packages are available, with sessions starting from affordable prices.
           </p>
@@ -56,19 +61,21 @@ export default function HowItWorks() {
         </div>
 
         <div className="text-center">
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-none px-10 py-6 text-lg h-auto shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-          >
-            <a
-              href="https://wa.me/7718820274"
-              target="_blank"
-              rel="noopener noreferrer"
+          <MotionWrap as="span" className="inline-block">
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-none px-10 py-6 text-lg h-auto shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
-              Start Your Journey Now
-            </a>
-          </Button>
+              <a
+                href="https://wa.me/7718820274"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Start Your Journey Now
+              </a>
+            </Button>
+          </MotionWrap>
         </div>
       </div>
     </section>
