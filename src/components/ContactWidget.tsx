@@ -1,10 +1,39 @@
+"use client";
+
+import * as React from "react";
+
 export default function ContactWidget() {
+  const [show, setShow] = React.useState(true);
+
+  React.useEffect(() => {
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    // Even with reduced motion, we still want correct show/hide behavior.
+    void reduceMotion;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry) return;
+        setShow(entry.isIntersecting);
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
+  if (!show) return null;
+
   return (
     <a
       href="https://wa.me/7718820274"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 inline-flex size-14 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+      className="fixed bottom-6 right-6 z-50 inline-flex size-14 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 animate-fade-in"
       aria-label="Contact on WhatsApp"
     >
       <span className="sr-only">Contact on WhatsApp</span>

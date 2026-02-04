@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Reveal from "@/components/Reveal";
 
 export default function Philosophy() {
   const features = [
@@ -20,36 +21,35 @@ export default function Philosophy() {
   ];
 
   return (
-    <section className="pt-14 sm:pt-16 md:pt-28 pb-12 sm:pb-14 md:pb-20 bg-white">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
-        <div className="text-center space-y-6 md:space-y-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-emerald-950">
+    <section className="pt-10 sm:pt-12 md:pt-16 pb-10 sm:pb-12 md:pb-16 bg-gradient-to-b from-white to-amber-50/60">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-9 md:space-y-12">
+        <Reveal className="text-center space-y-4 md:space-y-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-slate-900">
             Your Practice, Your Pace
-            <span className="block text-emerald-700 mt-2">Our Philosophy</span>
+            <span className="block text-emerald-800 mt-2">Our Philosophy</span>
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl md:max-w-7xl mx-auto leading-relaxed text-center">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl md:max-w-7xl mx-auto leading-relaxed text-center">
             Yoga for every body—grounded in breath, alignment, and mindful movement. Get personal guidance in a calm, online space.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid w-full items-stretch md:grid-cols-3 gap-12">
+        <div className="grid w-full items-stretch md:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
-            <Card
-              key={index}
-              className="w-full h-full min-h-[260px] sm:min-h-[300px] rounded-3xl p-7 sm:p-8 md:p-12 text-center bg-gradient-to-br from-emerald-50 to-white border-emerald-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <CardHeader className="justify-items-center text-center px-0">
-                <div className="text-5xl mb-5">{feature.icon}</div>
-                <CardTitle className="text-2xl font-serif font-bold text-gray-900 mb-4">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center px-0 flex flex-col h-full">
-                <CardDescription className="text-gray-600 leading-relaxed text-base md:text-lg text-center">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Reveal key={index} delayMs={index * 80} className="h-full">
+              <Card className="w-full h-full rounded-3xl p-6 sm:p-7 md:p-9 text-center bg-gradient-to-br from-emerald-50/70 to-white border-emerald-100 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1.5">
+                <CardHeader className="justify-items-center text-center px-0">
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <CardTitle className="text-xl sm:text-2xl font-serif font-bold text-slate-900 mb-3">
+                    {feature.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center px-0 flex flex-col h-full">
+                  <CardDescription className="text-slate-600 leading-relaxed text-base md:text-lg text-center">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </div>

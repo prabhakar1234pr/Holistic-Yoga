@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { MotionWrap } from "@/components/Motion";
 import LottieAccent from "@/components/LottieAccent";
+import Reveal from "@/components/Reveal";
 
 export default function HowItWorks() {
   const steps = [
@@ -23,48 +24,50 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="pt-8 md:pt-10 pb-8 md:pb-10 bg-white">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
-        <div className="text-center space-y-6 md:space-y-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
+    <section className="pt-8 sm:pt-10 md:pt-12 pb-8 sm:pb-10 md:pb-12 bg-gradient-to-b from-white to-emerald-50/40">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7 md:space-y-9">
+        <Reveal className="text-center space-y-4 md:space-y-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-slate-900">
             Start in 3 Simple Steps
           </h2>
           <div className="flex justify-center">
-            <LottieAccent className="h-10 w-10" label="Calm breathing accent" />
+            <LottieAccent className="h-9 w-9" label="Calm breathing accent" />
           </div>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto text-center">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto text-center">
             Message on WhatsApp to book in minutes.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid w-full md:grid-cols-3 gap-10 sm:gap-12 md:gap-16 relative">
+        <div className="grid w-full md:grid-cols-3 gap-5 sm:gap-6 md:gap-7 relative">
           {steps.map((step, index) => (
-            <Card key={index} className="relative w-full text-center border-0 shadow-none">
-              <CardHeader>
-                <div className="mx-auto mb-6 sm:mb-8 inline-flex items-center justify-center size-16 sm:size-20 md:size-24 rounded-full bg-white ring-2 ring-emerald-200 shadow-sm">
-                  <span className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-emerald-700">
-                    {step.number}
-                  </span>
-                </div>
-                <CardTitle className="text-2xl font-serif font-bold text-gray-900 mb-6">
-                  {step.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 leading-relaxed text-lg">
-                  {step.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Reveal key={index} delayMs={index * 80} className="h-full">
+              <Card className="relative w-full h-full text-center rounded-3xl bg-white/70 backdrop-blur-[2px] ring-1 ring-emerald-100 shadow-sm py-5 sm:py-6">
+                <CardHeader className="px-6">
+                  <div className="mx-auto mb-4 inline-flex items-center justify-center size-14 sm:size-16 md:size-[68px] rounded-full bg-white/90 ring-1 ring-emerald-200 shadow-sm">
+                    <span className="font-serif font-bold text-2xl sm:text-3xl text-emerald-800">
+                      {step.number}
+                    </span>
+                  </div>
+                  <CardTitle className="text-xl sm:text-2xl font-serif font-bold text-slate-900 mb-3">
+                    {step.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="px-6">
+                  <CardDescription className="text-slate-600 leading-relaxed text-base sm:text-lg">
+                    {step.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Reveal>
           ))}
         </div>
 
-        <div className="text-center">
+        <Reveal className="text-center">
           <MotionWrap as="span" className="inline-block">
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-none px-10 py-6 text-lg h-auto shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-800 hover:to-teal-800 text-white rounded-full px-9 py-6 text-base sm:text-lg h-auto shadow-md hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300"
             >
               <a
                 href="https://wa.me/7718820274"
@@ -75,7 +78,7 @@ export default function HowItWorks() {
               </a>
             </Button>
           </MotionWrap>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

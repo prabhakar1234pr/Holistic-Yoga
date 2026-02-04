@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Philosophy from "@/components/Philosophy";
 import Offerings from "@/components/Offerings";
@@ -9,6 +8,7 @@ import HowItWorks from "@/components/HowItWorks";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import ContactWidget from "@/components/ContactWidget";
+import InstagramCTA from "@/components/InstagramCTA";
 
 export default function Home() {
   const siteUrl =
@@ -32,13 +32,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navbar />
       <ContactWidget />
       <Hero />
       <Philosophy />
       <Offerings />
       <Benefits />
       <Testimonials />
+      <InstagramCTA />
       <CorporateWellness />
       <HowItWorks />
       <About />

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const TESTIMONIALS = [
   {
@@ -64,24 +65,24 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-14 sm:py-16 md:py-28 bg-gradient-to-b from-emerald-50 to-white">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
-        <div className="text-center space-y-6 md:space-y-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900">
+    <section id="testimonials" className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-emerald-50/50 to-white">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-9 md:space-y-12">
+        <Reveal className="text-center space-y-4 md:space-y-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-slate-900">
             Loved Around the World
           </h2>
           <div className="flex justify-center">
-            <p className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto text-center">
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-xl mx-auto text-center">
               Real stories from students across the globe.
             </p>
           </div>
-          <Badge className="inline-flex items-center gap-3 px-5 py-2 sm:px-8 sm:py-3 bg-emerald-100 text-emerald-700 rounded-full text-base sm:text-lg h-auto">
+          <Badge className="inline-flex items-center gap-3 px-5 py-2 sm:px-7 sm:py-3 bg-emerald-100 text-emerald-800 rounded-full text-sm sm:text-base h-auto">
             <span className="text-2xl font-bold">98%</span>
             <span className="font-semibold">Client Satisfaction Rate</span>
           </Badge>
-        </div>
+        </Reveal>
 
-        <div className="mx-auto w-full max-w-4xl">
+        <Reveal className="mx-auto w-full max-w-4xl">
           <div
             className="relative h-[340px] sm:h-[360px] md:h-[380px] overflow-hidden"
             style={{ perspective: "1200px" }}
@@ -91,7 +92,7 @@ export default function Testimonials() {
               <div className="absolute left-1/2 top-[46%] -translate-y-1/2 -translate-x-[112%] rotate-[-10deg] scale-[0.9] origin-bottom-right transform-gpu">
                 <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[84vw] max-w-[520px] rounded-3xl bg-white/80 shadow-md border border-emerald-100/60">
                   <CardContent className="flex flex-col h-full p-7 sm:p-8 md:p-10 opacity-70">
-                    <CardDescription className="text-gray-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
+                    <CardDescription className="text-slate-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
                       <q>{prev.quote}</q>
                     </CardDescription>
                     <p className="mt-auto pt-6 text-xs sm:text-sm font-semibold text-emerald-600">
@@ -104,7 +105,7 @@ export default function Testimonials() {
               <div className="absolute left-1/2 top-[46%] -translate-y-1/2 translate-x-[12%] rotate-[10deg] scale-[0.9] origin-bottom-left transform-gpu">
                 <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[84vw] max-w-[520px] rounded-3xl bg-white/80 shadow-md border border-emerald-100/60">
                   <CardContent className="flex flex-col h-full p-7 sm:p-8 md:p-10 opacity-70">
-                    <CardDescription className="text-gray-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
+                    <CardDescription className="text-slate-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
                       <q>{next.quote}</q>
                     </CardDescription>
                     <p className="mt-auto pt-6 text-xs sm:text-sm font-semibold text-emerald-600">
@@ -174,7 +175,7 @@ export default function Testimonials() {
                     </div>
                   </CardHeader>
                   <CardContent className="px-0 flex flex-col h-full">
-                    <CardDescription className="text-gray-700 leading-relaxed italic text-lg">
+                    <CardDescription className="text-slate-700 leading-relaxed italic text-base sm:text-lg">
                       <q>{current.quote}</q>
                     </CardDescription>
                     <p className="mt-auto pt-6 text-sm font-semibold text-emerald-600">
@@ -185,7 +186,7 @@ export default function Testimonials() {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
