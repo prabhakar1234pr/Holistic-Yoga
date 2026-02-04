@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export default function About() {
   const certifications = [
@@ -21,6 +22,15 @@ export default function About() {
 
           <Card className="rounded-3xl border border-emerald-100 bg-gradient-to-br from-white via-emerald-50 to-white p-14 md:p-20 shadow-2xl">
             <CardHeader className="justify-items-center text-center">
+              <div className="mx-auto mb-10 size-40 md:size-48 overflow-hidden rounded-full bg-white shadow-lg ring-1 ring-emerald-100">
+                <Image
+                  src="/Teja.jpeg"
+                  alt="Yoga trainer portrait"
+                  width={192}
+                  height={192}
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <CardDescription className="text-xl text-gray-800 leading-relaxed text-center">
                 Hello! I transitioned from Software Engineering to become an International Yoga Trainer, 
                 driven by a deep passion to <strong className="text-emerald-600">bring health, harmony, and empowerment</strong> through 

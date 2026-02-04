@@ -22,7 +22,7 @@ export default function Philosophy() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="pt-20 md:pt-28 pb-14 md:pb-20 bg-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-emerald-950">
@@ -34,11 +34,11 @@ export default function Philosophy() {
           </p>
         </div>
 
-        <div className="grid w-full items-start md:grid-cols-3 gap-12">
+        <div className="grid w-full items-stretch md:grid-cols-3 gap-12">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="w-full h-fit rounded-3xl p-10 md:p-12 text-center bg-gradient-to-br from-emerald-50 to-white border-emerald-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="w-full h-full min-h-[300px] rounded-3xl p-10 md:p-12 text-center bg-gradient-to-br from-emerald-50 to-white border-emerald-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <CardHeader className="justify-items-center text-center px-0">
                 <div className="text-5xl mb-5">{feature.icon}</div>
@@ -46,7 +46,7 @@ export default function Philosophy() {
                   {feature.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-center px-0">
+              <CardContent className="text-center px-0 flex flex-col h-full">
                 <CardDescription className="text-gray-600 leading-relaxed text-base md:text-lg text-center">
                   {feature.description}
                 </CardDescription>

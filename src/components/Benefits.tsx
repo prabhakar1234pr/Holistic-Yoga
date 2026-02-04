@@ -40,23 +40,26 @@ export default function Benefits() {
           </div>
         </div>
 
-        <div className="grid w-full items-start md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid w-full items-start md:grid-cols-2 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <Card
               key={index}
-              className="w-full h-fit rounded-3xl p-10 md:p-12 text-center bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300"
+              className="w-full h-fit rounded-3xl p-8 md:p-10 bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300"
             >
-              <CardHeader className="justify-items-center text-center px-0">
-                <div className="text-4xl mb-5">{benefit.icon}</div>
-                <CardTitle className="text-xl font-serif font-bold text-gray-900 mb-4">
-                  {benefit.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center px-0">
-                <CardDescription className="text-gray-600 leading-relaxed text-center">
-                  {benefit.description}
-                </CardDescription>
-              </CardContent>
+              <div className="flex items-start gap-5 md:gap-6">
+                <div className="shrink-0 rounded-2xl bg-white/70 ring-1 ring-gray-100 px-4 py-3 text-3xl shadow-sm">
+                  {benefit.icon}
+                </div>
+
+                <div className="min-w-0 text-left">
+                  <h3 className="text-xl font-serif font-bold text-gray-900">
+                    {benefit.title}
+                  </h3>
+                  <p className="mt-2 text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
             </Card>
           ))}
         </div>

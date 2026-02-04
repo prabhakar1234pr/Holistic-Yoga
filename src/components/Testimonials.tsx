@@ -55,24 +55,24 @@ export default function Testimonials() {
           </Badge>
         </div>
 
-        <div className="grid w-full items-start md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid w-full md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="w-full h-fit rounded-3xl p-10 shadow-md hover:shadow-xl transition-all duration-300"
+              className="w-full rounded-3xl p-10 shadow-md hover:shadow-xl transition-all duration-300 h-auto md:h-[398px]"
             >
-              <CardHeader>
+              <CardHeader className="px-0">
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-xl">⭐</span>
                   ))}
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-700 mb-6 leading-relaxed italic text-lg">
+              <CardContent className="px-0 flex flex-col h-full">
+                <CardDescription className="text-gray-700 leading-relaxed italic text-lg text-clamp-6">
                   "{testimonial.quote}"
                 </CardDescription>
-                <p className="text-sm font-semibold text-emerald-600">
+                <p className="mt-auto pt-6 text-sm font-semibold text-emerald-600">
                   — {testimonial.author}
                 </p>
               </CardContent>

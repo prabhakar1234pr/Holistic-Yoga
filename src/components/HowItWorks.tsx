@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export default function HowItWorks() {
@@ -39,18 +38,12 @@ export default function HowItWorks() {
         </div>
 
         <div className="grid w-full md:grid-cols-3 gap-16 relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-24 left-1/3 right-1/3 h-1 bg-gradient-to-r from-emerald-300 via-purple-300 to-emerald-300"></div>
-
           {steps.map((step, index) => (
             <Card key={index} className="relative w-full text-center border-0 shadow-none">
               <CardHeader>
                 <div className="relative inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-emerald-500 to-purple-600 rounded-full text-white text-5xl font-bold mb-8 shadow-lg transform hover:scale-110 transition-transform duration-300">
                   <span className="absolute">{step.icon}</span>
                 </div>
-                <Badge className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-emerald-500 text-emerald-600 font-bold text-2xl shadow-md">
-                  {step.number}
-                </Badge>
                 <CardTitle className="text-2xl font-serif font-bold text-gray-900 mb-6">
                   {step.title}
                 </CardTitle>

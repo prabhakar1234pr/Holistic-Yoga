@@ -25,7 +25,7 @@ export default function Offerings() {
   ];
 
   return (
-    <section id="offerings" className="py-20 md:py-28 bg-gradient-to-b from-white to-emerald-50">
+    <section id="offerings" className="pt-14 md:pt-20 pb-20 md:pb-28 bg-gradient-to-b from-white to-emerald-50">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 md:space-y-16">
         <div className="text-center space-y-6 md:space-y-8">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900">
@@ -40,23 +40,23 @@ export default function Offerings() {
           </div>
         </div>
 
-        <div className="grid w-full items-start md:grid-cols-3 gap-12">
+        <div className="grid w-full items-stretch md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
           {offerings.map((offering, index) => (
             <Card
               key={index}
-              className="group relative w-full overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4"
+              className="group relative w-full overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full min-h-[320px]"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${offering.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              <CardHeader className="relative p-10 md:p-12">
-                <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+              <CardHeader className="relative p-8 md:p-10">
+                <div className="text-5xl mb-5 transform group-hover:scale-110 transition-transform duration-300">
                   {offering.icon}
                 </div>
-                <CardTitle className="text-2xl font-serif font-bold text-gray-900 mb-4 group-hover:text-white transition-colors duration-300">
+                <CardTitle className="text-2xl font-serif font-bold text-gray-900 mb-3 group-hover:text-white transition-colors duration-300">
                   {offering.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="relative px-10 pb-10 md:px-12 md:pb-12">
-                <CardDescription className="text-gray-600 leading-relaxed text-base md:text-lg group-hover:text-white/90 transition-colors duration-300">
+              <CardContent className="relative px-8 pb-8 md:px-10 md:pb-10">
+                <CardDescription className="text-gray-600 leading-relaxed text-base md:text-lg group-hover:text-white/90 transition-colors duration-300 text-clamp-4">
                   {offering.description}
                 </CardDescription>
               </CardContent>

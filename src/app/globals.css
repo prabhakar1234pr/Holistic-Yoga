@@ -109,3 +109,24 @@ h1, h2, h3, h4, h5, h6 {
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out;
 }
+
+/* Simple text clamping (no plugin needed) */
+.text-clamp-4,
+.text-clamp-5,
+.text-clamp-6 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-clamp-4 {
+  -webkit-line-clamp: 4;
+}
+
+.text-clamp-5 {
+  -webkit-line-clamp: 5;
+}
+
+.text-clamp-6 {
+  -webkit-line-clamp: 6;
+}
