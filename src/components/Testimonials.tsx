@@ -1,22 +1,20 @@
-"use client";
-
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "My stress levels reduced by 30% after just a few weeks of consistent practice with Holistic Yoga. Truly life-changing!",
+      quote: "After a few weeks of consistent practice, I felt noticeably less stressed and more balanced. Truly life-changing!",
       author: "Client from Karnataka, India",
       rating: 5,
     },
     {
-      quote: "As a complete beginner, I found the instruction to be incredibly passionate and supportive. It worked for my mommy pooch to some extent that which I couldn't believe. It helped me to calm my mind and improved my health",
+      quote: "As a complete beginner, I found the instruction incredibly supportive and encouraging. It helped me feel calmer, stronger, and more confident in my body.",
       author: "Client from Karnataka, India",
       rating: 5,
     },
     {
-      quote: "My TSH used to be very high which was around 20 before I joined Yoga classes. Now it's 0.595 and also I have lost weight of 3kgs.",
+      quote: "Since joining the classes, I’ve noticed meaningful improvements in my overall well-being and energy, and I’ve also lost a few kilos.",
       author: "Client from Andhra Pradesh, India",
       rating: 5,
     },
@@ -62,15 +60,18 @@ export default function Testimonials() {
               className="w-full rounded-3xl p-7 sm:p-8 md:p-10 shadow-md hover:shadow-xl transition-all duration-300 h-auto md:h-[398px]"
             >
               <CardHeader className="px-0">
-                <div className="flex gap-1 mb-6">
+                <span className="sr-only">{testimonial.rating} out of 5 stars</span>
+                <div className="flex gap-1 mb-6" aria-hidden="true">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">⭐</span>
+                    <span key={i} className="text-yellow-400 text-xl">
+                      ⭐
+                    </span>
                   ))}
                 </div>
               </CardHeader>
               <CardContent className="px-0 flex flex-col h-full">
                 <CardDescription className="text-gray-700 leading-relaxed italic text-lg text-clamp-6">
-                  "{testimonial.quote}"
+                  <q>{testimonial.quote}</q>
                 </CardDescription>
                 <p className="mt-auto pt-6 text-sm font-semibold text-emerald-600">
                   — {testimonial.author}

@@ -1,7 +1,3 @@
-"use client";
-
-import { Separator } from "@/components/ui/separator";
-
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12 sm:py-16">
@@ -62,7 +58,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="bg-gray-800 mb-12" />
+        <div className="h-px w-full bg-gray-800 mb-12" />
         <div className="text-center text-gray-400">
           <p className="text-base sm:text-lg">&copy; {new Date().getFullYear()} Holistic Yoga. All rights reserved.</p>
         </div>

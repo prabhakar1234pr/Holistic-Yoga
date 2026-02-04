@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
@@ -34,7 +32,7 @@ export default function About() {
               <CardDescription className="text-lg sm:text-xl text-gray-800 leading-relaxed text-center">
                 Hello! I transitioned from Software Engineering to become an International Yoga Trainer, 
                 driven by a deep passion to <strong className="text-emerald-600">bring health, harmony, and empowerment</strong> through 
-                yoga to people's lives, wherever you are in the world.
+                yoga to people’s lives, wherever you are in the world.
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center space-y-10 md:space-y-12">

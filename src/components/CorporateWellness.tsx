@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 
@@ -18,11 +16,11 @@ export default function CorporateWellness() {
             Corporate Wellness Sessions
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-5xl mx-auto text-center">
-            I have conducted yoga sessions (including chair yoga) in IT Companies like Oracle, TechMahindra
-            etc Govt based organisations like LIC, Mazagaon Dock
+            I’ve conducted corporate yoga sessions (including chair yoga) for IT companies such as Oracle and Tech Mahindra,
+            as well as government organizations like LIC and Mazagaon Dock.
           </p>
           <p className="text-lg text-gray-600 max-w-5xl mx-auto text-center">
-            As part of corporate wellness sessions and on the occasion of international yoga day
+            These sessions are offered as part of corporate wellness programs and for special occasions such as International Yoga Day.
           </p>
         </div>
 
