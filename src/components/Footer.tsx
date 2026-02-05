@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import { Instagram, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -41,8 +42,9 @@ export default function Footer() {
                   href="https://wa.me/7718820274"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-700 transition-colors text-base sm:text-lg"
+                  className="inline-flex items-center gap-2 hover:text-emerald-700 transition-colors text-base sm:text-lg"
                 >
+                  <MessageCircle className="h-5 w-5 shrink-0" aria-hidden />
                   WhatsApp
                 </a>
               </li>
@@ -51,8 +53,9 @@ export default function Footer() {
                   href="https://instagram.com/holisticyoga.with.tejasree"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-700 transition-colors text-base sm:text-lg"
+                  className="inline-flex items-center gap-2 hover:text-emerald-700 transition-colors text-base sm:text-lg"
                 >
+                  <Instagram className="h-5 w-5 shrink-0" aria-hidden />
                   Instagram
                 </a>
               </li>

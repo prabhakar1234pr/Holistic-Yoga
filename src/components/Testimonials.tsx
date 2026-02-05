@@ -57,7 +57,7 @@ export default function Testimonials() {
   const prev = TESTIMONIALS[(index - 1 + len) % len]!;
   const next = TESTIMONIALS[(index + 1) % len]!;
 
-  const swipeThreshold = 110;
+  const swipeThreshold = 60;
 
   const go = (dir: -1 | 1) => {
     setDirection(dir);
@@ -154,7 +154,7 @@ export default function Testimonials() {
                     transition: { duration: 0.2 },
                   }}
                   transition={{ type: "spring", stiffness: 260, damping: 26 }}
-                  style={{ touchAction: "pan-y" }}
+                  style={{ touchAction: "pan-x" }}
                 >
                   <Card className="h-[260px] sm:h-[280px] md:h-[300px] w-[82vw] max-w-[340px] rounded-[1.25rem] shadow-xl border border-slate-200/80 bg-white overflow-hidden flex flex-col">
                     <CardHeader className="px-3 pt-3 pb-1 sm:px-4 sm:pt-4 shrink-0">
