@@ -83,108 +83,112 @@ export default function Testimonials() {
         </Reveal>
 
         <Reveal className="mx-auto w-full max-w-4xl">
-          <div
-            className="relative h-[340px] sm:h-[360px] md:h-[380px] overflow-hidden"
-            style={{ perspective: "1200px" }}
-          >
-            {/* Side peeks (previous / next) */}
-            <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-              <div className="absolute left-1/2 top-[46%] -translate-y-1/2 -translate-x-[112%] rotate-[-10deg] scale-[0.9] origin-bottom-right transform-gpu">
-                <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[84vw] max-w-[520px] rounded-3xl bg-white/80 shadow-md border border-emerald-100/60">
-                  <CardContent className="flex flex-col h-full p-7 sm:p-8 md:p-10 opacity-70">
-                    <CardDescription className="text-slate-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
-                      <q>{prev.quote}</q>
-                    </CardDescription>
-                    <p className="mt-auto pt-6 text-xs sm:text-sm font-semibold text-emerald-600">
-                      — {prev.author}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="absolute left-1/2 top-[46%] -translate-y-1/2 translate-x-[12%] rotate-[10deg] scale-[0.9] origin-bottom-left transform-gpu">
-                <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[84vw] max-w-[520px] rounded-3xl bg-white/80 shadow-md border border-emerald-100/60">
-                  <CardContent className="flex flex-col h-full p-7 sm:p-8 md:p-10 opacity-70">
-                    <CardDescription className="text-slate-700 leading-relaxed italic text-base sm:text-lg text-clamp-4">
-                      <q>{next.quote}</q>
-                    </CardDescription>
-                    <p className="mt-auto pt-6 text-xs sm:text-sm font-semibold text-emerald-600">
-                      — {next.author}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Left/Right buttons */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            {/* Left button - outside card */}
             <Button
               type="button"
               variant="outline"
               size="icon"
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 rounded-full bg-white/85 backdrop-blur-sm"
+              className="shrink-0 rounded-full bg-white/85 backdrop-blur-sm h-9 w-9 sm:h-10 sm:w-10"
               onClick={() => go(-1)}
               aria-label={`Previous testimonial: ${prev.author}`}
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
+
+            <div
+              className="relative flex-1 min-w-0 h-[280px] sm:h-[300px] md:h-[320px] overflow-hidden"
+              style={{ perspective: "1200px" }}
+            >
+              {/* Side peeks (previous / next) */}
+              <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+                <div className="absolute left-1/2 top-[46%] -translate-y-1/2 -translate-x-[112%] rotate-[-10deg] scale-[0.9] origin-bottom-right transform-gpu">
+                  <Card className="h-[260px] sm:h-[280px] md:h-[300px] w-[70vw] max-w-[380px] rounded-2xl bg-white/80 shadow-md border border-emerald-100/60">
+                    <CardContent className="flex flex-col h-full p-4 sm:p-5 md:p-6 opacity-70">
+                      <CardDescription className="text-slate-700 leading-relaxed italic text-sm sm:text-base text-clamp-4">
+                        <q>{prev.quote}</q>
+                      </CardDescription>
+                      <p className="mt-auto pt-4 text-xs font-semibold text-emerald-600">
+                        — {prev.author}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="absolute left-1/2 top-[46%] -translate-y-1/2 translate-x-[12%] rotate-[10deg] scale-[0.9] origin-bottom-left transform-gpu">
+                  <Card className="h-[260px] sm:h-[280px] md:h-[300px] w-[70vw] max-w-[380px] rounded-2xl bg-white/80 shadow-md border border-emerald-100/60">
+                    <CardContent className="flex flex-col h-full p-4 sm:p-5 md:p-6 opacity-70">
+                      <CardDescription className="text-slate-700 leading-relaxed italic text-sm sm:text-base text-clamp-4">
+                        <q>{next.quote}</q>
+                      </CardDescription>
+                      <p className="mt-auto pt-4 text-xs font-semibold text-emerald-600">
+                        — {next.author}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Top swipeable card */}
+              <AnimatePresence initial={false} custom={direction}>
+                <motion.div
+                  key={index}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+                  drag={reduceMotion ? false : "x"}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.18}
+                  onDragEnd={(_, info) => {
+                    if (reduceMotion) return;
+                    if (info.offset.x > swipeThreshold) go(-1);
+                    else if (info.offset.x < -swipeThreshold) go(1);
+                  }}
+                  custom={direction}
+                  initial={{ opacity: 0, scale: 0.98, x: direction * 18 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  exit={{
+                    opacity: 0,
+                    x: direction * -420,
+                    rotate: direction * -10,
+                    transition: { duration: 0.2 },
+                  }}
+                  transition={{ type: "spring", stiffness: 260, damping: 26 }}
+                  style={{ touchAction: "pan-y" }}
+                >
+                  <Card className="h-[260px] sm:h-[280px] md:h-[300px] w-[85vw] max-w-[380px] rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl bg-white">
+                    <CardHeader className="px-0 pt-0">
+                      <span className="sr-only">{current.rating} out of 5 stars</span>
+                      <div className="flex gap-1 mb-3 sm:mb-4" aria-hidden="true">
+                        {[...Array(current.rating)].map((_, i) => (
+                          <span key={i} className="text-yellow-400 text-base sm:text-lg">
+                            ⭐
+                          </span>
+                        ))}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="px-0 flex flex-col h-full">
+                      <CardDescription className="text-slate-700 leading-relaxed italic text-sm sm:text-base">
+                        <q>{current.quote}</q>
+                      </CardDescription>
+                      <p className="mt-auto pt-4 text-xs sm:text-sm font-semibold text-emerald-600">
+                        — {current.author}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right button - outside card */}
             <Button
               type="button"
               variant="outline"
               size="icon"
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 rounded-full bg-white/85 backdrop-blur-sm"
+              className="shrink-0 rounded-full bg-white/85 backdrop-blur-sm h-9 w-9 sm:h-10 sm:w-10"
               onClick={() => go(1)}
               aria-label={`Next testimonial: ${next.author}`}
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
-
-            {/* Top swipeable card. */}
-            <AnimatePresence initial={false} custom={direction}>
-              <motion.div
-                key={index}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
-                drag={reduceMotion ? false : "x"}
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.18}
-                onDragEnd={(_, info) => {
-                  if (reduceMotion) return;
-                  if (info.offset.x > swipeThreshold) go(-1);
-                  else if (info.offset.x < -swipeThreshold) go(1);
-                }}
-                custom={direction}
-                initial={{ opacity: 0, scale: 0.98, x: direction * 18 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                exit={{
-                  opacity: 0,
-                  x: direction * -420,
-                  rotate: direction * -10,
-                  transition: { duration: 0.2 },
-                }}
-                transition={{ type: "spring", stiffness: 260, damping: 26 }}
-                style={{ touchAction: "pan-y" }}
-              >
-                <Card className="h-[320px] sm:h-[340px] md:h-[360px] w-[92vw] max-w-[520px] rounded-3xl p-7 sm:p-8 md:p-10 shadow-xl bg-white">
-                  <CardHeader className="px-0">
-                    <span className="sr-only">{current.rating} out of 5 stars</span>
-                    <div className="flex gap-1 mb-6" aria-hidden="true">
-                    {[...Array(current.rating)].map((_, i) => (
-                        <span key={i} className="text-yellow-400 text-xl">
-                          ⭐
-                        </span>
-                      ))}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="px-0 flex flex-col h-full">
-                    <CardDescription className="text-slate-700 leading-relaxed italic text-base sm:text-lg">
-                      <q>{current.quote}</q>
-                    </CardDescription>
-                    <p className="mt-auto pt-6 text-sm font-semibold text-emerald-600">
-                      — {current.author}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </AnimatePresence>
           </div>
         </Reveal>
       </div>
